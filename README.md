@@ -2,29 +2,33 @@
 
 > Introduction of SB team
 
-## Build Setup
+## 環境設定
 
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
+1. Fork這份專案後，在home目錄下執行` git clone + 你的專案url `。
+2. 移動至`AboutUsSB`後，執行` npm i `。
+3. 移動至`AboutUsSB`底下的 `config`後，用編輯器開啟 ` index.js ` 
+4. 你會看到:
 ```
+'use strict'
+// Template version: 1.3.1
+// see http://vuejs-templates.github.io/webpack for documentation.
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+const path = require('path')
+
+module.exports = {
+  dev: {
+
+    // Paths
+    assetsSubDirectory: 'static',
+    assetsPublicPath: '/',
+    proxyTable: {},
+
+    // Various Dev Server settings
+    host: 'localhost', 
+    port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
+    .....
+```
+  請將```port: 數字 ``` 改成你喜歡的數字後，儲存。  
+  
+5. 回到`AboutUsSB`目錄，執行` npm start ` 就可以打開另外一個terminal開始編輯。如果有語法錯誤也會在這個terminal顯示。
+6. 在自己的電腦開啟 `http://luffy.ee.ncku.edu.tw:你剛剛輸入的數字/#/` 就可以看到結果。
