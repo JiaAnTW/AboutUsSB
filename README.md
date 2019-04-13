@@ -31,4 +31,4 @@ module.exports = {
   請將```port: 數字 ``` 改成你喜歡的數字後，儲存。  
   
 5. 回到`AboutUsSB`目錄，執行` npm start ` 就可以打開另外一個terminal開始編輯。如果有語法錯誤也會在這個terminal顯示。
-6. 在自己的電腦開啟 `http://luffy.ee.ncku.edu.tw:你剛剛輸入的數字/#/` 就可以看到結果。
+6. 在自己的電腦開啟「 `http://luffy.ee.ncku.edu.tw:你剛剛輸入的數字/#/` 」就可以看到結果。
