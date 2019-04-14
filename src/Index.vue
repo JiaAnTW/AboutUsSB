@@ -1,7 +1,7 @@
 <template>
   <div class="view">
-    <landing @change-now-at="handleChangeNowAt" :now="nowAt"/>
     <team @change-now-at="handleChangeNowAt" :now="nowAt"/>
+    <landing @change-now-at="handleChangeNowAt" :now="nowAt"/>
     <self-intro @change-now-at="handleChangeNowAt" :now="nowAt"/>
   </div>
 </template>
@@ -34,9 +34,10 @@ export default {
     margin-left: 0;
     width: 100rem;
     max-width: 100%;
-    height: 46.8rem;
+    height: 46.9rem;
+    max-height: 100%;
     overflow:hidden;
+    overflow-x: hidden;
     display:inline-block;
   }
-
 </style>

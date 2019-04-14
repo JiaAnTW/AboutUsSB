@@ -1,4 +1,3 @@
-
 <template>
   <div class="landing" v-bind:style="clip">
     <img id="background_01" src="../assets/About_us_01.png" alt="background_01"/>
@@ -12,28 +11,28 @@ export default {
   name: 'landing',
   props: ['now'],
   data () {
-      return {
-            clip: {
-                    clipPath: 'circle(100% at 50% 50%)',
-                            WebkitClipPath: 'circle(100% at 50% 50%)',
-                                    display: "block",
-                                            },
-                                                }
-                                                  },
-                                                  methods: {
-                                                      small: function(event){
-                                                            const smaller =()=> {
-                                                                    this.clip={clipPath: 'circle(0% at 61% 64%)',WebkitClipPath: 'circle(0% at 61% 64%)',display: "block"};
-                                                                          }
-                                                                                console.log("before now is: "+ this.now);
-                                                                                      smaller();
-                                                                                            this.$emit('change-now-at',3);
-                                                                                                  const emerge =()=>{
-                                                                                                          this.clip={clipPath: 'circle(0% at 61% 64%)',WebkitClipPath: 'circle(0% at 61% 64%)',display: "none"};
-                                                                                                                }
-                                                                                                                      setTimeout(emerge,1000);
-                                                                                                                          }
-                                                                                                                            }}
+    return {
+      clip: {
+        clipPath: 'circle(100% at 50% 50%)',
+        WebkitClipPath: 'circle(100% at 50% 50%)',
+        display: "block",
+      },
+  }
+},
+  methods: {
+    small: function(event){
+      const smaller =()=> {
+        this.clip={clipPath: 'circle(0% at 61% 64%)',WebkitClipPath: 'circle(0% at 61% 64%)',display: "block"};
+      }
+      smaller();
+      this.$emit('change-now-at',2);
+      const emerge =()=>{
+        this.clip={clipPath: 'circle(0% at 61% 64%)',WebkitClipPath: 'circle(0% at 61% 64%)',display: "none"};
+      }
+      setTimeout(emerge,1500);
+    }
+  }
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -42,25 +41,23 @@ export default {
     position: absolute;
     margin-top: 0 ;
     margin-left: 13rem;
-    height: 46.8rem;
+    height: 46.9rem;
     width: auto;
-
   }
   .landing{
     margin-top: 0 ;
     margin-left: 0;
     width: 100rem;
     max-width: 100%;
-    height: 46.8rem;
+    height: 46.9rem;
     overflow:hidden;
     display: inline-block;
     background-color: rgb(235, 195, 91);
-    -webkit-transition: clip-path 1s ease-in-out;
-    -moz-transition: clip-path 1s ease-in-out;
-    -o-transition: clip-path 1s ease-in-out;
-    transition: clip-path 1s ease-in-out;
+    -webkit-transition: clip-path 1.5s ease-in-out;
+    -moz-transition: clip-path 1.5s ease-in-out;
+    -o-transition: clip-path 1.5s ease-in-out;
+    transition: clip-path 1.5s ease-in-out;
   }
-
   .circle_btn{
     position: absolute;
     left: 51rem;
@@ -72,5 +69,4 @@ export default {
     border: none;
     outline: none;
   }
-
 </style>

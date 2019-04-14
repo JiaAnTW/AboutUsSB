@@ -12,8 +12,9 @@ export default {
 
 <style>
 html{
-  font-size: 10px;
+  font-size: 20px;
   font-size: 1vw;
+  
 }
 #app {
   position: absolute;

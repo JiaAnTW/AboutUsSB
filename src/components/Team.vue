@@ -1,7 +1,7 @@
-
 <template>
-  <div class="team" v-bind:style="move" >
-    <img id=background_03 src="../assets/About_us_03.png" alt="Pro_background">
+  <div class="team" v-bind:style="fly">
+    <img id="background_02" src="../assets/About_us_02.png" alt="background_02"/>
+    <button class="circle_btn" v-on:click="move"></button>
   </div>
 </template>
 
@@ -9,43 +9,54 @@
 /* eslint-disable */
 export default {
   name: 'team',
-  props:['now'],
+  props: ['now'],
   data () {
     return {
-      move:{
-        left:'100%'
+      fly:{
+        left:'0', 
       },
     }
-},
-  watch:{
-  now:function(){
-  console.log("test")
-  if(this.now===3){
-  const slide=()=>{
-    this.move={left:'0%'}
-    }
-    setTimeout(slide,1000)
+  },
+  methods:{
+    move:function(){
+      this.$emit('change-now-at',3);
+        const flyin=()=>{
+          this.fly={left:'-100rem'}
+      }
+      flyin();
     }
   }
-  }
- } 
+}
 </script>
-
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-   .self{
-   height:46.9rem;
-   }
-   .team{
-     position:absolute;
-     width:100%;
-      -webkit-transition: left 1s ease-in-out;
-      -moz-transition: left 1s ease-in-out;
-      -o-transition: left 1s ease-in-out;
-      transition: left 1s ease-in-out;
-   }
-  #background_03{
-  width:100%;
+  .team{
+    position:absolute;
+    height:46.8rem;
+    top: 0rem;
+		-webkit-transition:  left  1s ease-in-out;
+    -moz-transition:  left  1s ease-in-out;
+    -o-transition: left  1s ease-in-out;
+    transition: left 1s ease-in-out;
+		
+  }
+  #background_02{
+    position:absolute;
+    margin-top:0;
+    margin-left: 10rem;
+    height:46.8rem;
+    
+	}
+    .circle_btn{
+    position: absolute;
+    left: 76.7rem;
+    top: 24.0rem;
+    width: 2.9rem;
+    height: 2.9rem;
+    border-radius: 18.5rem;
+    background-color:rgba(243,243,243,0);
+    border: none;
+    outline: none;
   }
 </style>
