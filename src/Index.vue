@@ -1,17 +1,27 @@
 <template>
   <div class="view">
-    <Landing/>
+    <self-intro @change-now-at="handleChangeNowAt" :now="nowAt"/>
+    <team @change-now-at="handleChangeNowAt" :now="nowAt"/>
+    <landing @change-now-at="handleChangeNowAt" :now="nowAt"/>
   </div>
 </template>
 
 <script>
+/* eslint-disable */
 import Landing from './components/Landing.vue'
+import Team from './components/Team.vue'
+import SelfIntro from './components/SelfIntro.vue'
 export default {
   name: 'Index',
-  components: {Landing},
+  components: {Landing,Team,SelfIntro},
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      nowAt: 1,
+    }
+  },
+  methods:{
+    handleChangeNowAt: function(page){
+      this.nowAt=page;
     }
   }
 }
@@ -24,17 +34,8 @@ export default {
     margin-left: 0;
     width: 100rem;
     max-width: 100%;
-    height: 47rem;
+    height: 46.8rem;
+    
   }
 
-  @keyframes Small {
-    0% {
-      -webkit-clip-path: circle(100% at 50% 50%);
-      clip-path: circle(100% at 50% 50%);
-    }
-    100% {
-      -webkit-clip-path: circle(0% at 69% 67%);
-      clip-path: circle(0% at 69% 67%);
-    }
-  }
 </style>
