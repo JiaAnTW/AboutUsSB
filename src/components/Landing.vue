@@ -12,30 +12,34 @@ export default {
   name: 'landing',
   props: ['now'],
   data () {
-    return {
-      clip: {
-        clipPath: 'circle(100% at 50% 50%)',
-        WebkitClipPath: 'circle(100% at 50% 50%)'
-        },
-    }
-  },
-  methods: {
-    small: function(event){
-      console.log("before now is: "+ this.now);
-      const smaller =()=> {
-        this.clip={clipPath: 'circle(0% at 61% 64%)',WebkitClipPath: 'circle(0% at 61% 64%)'};
-      }
-      smaller();
-      this.$emit('change-now-at',2);
-    }
-  }
-}
+      return {
+            clip: {
+                    clipPath: 'circle(100% at 50% 50%)',
+                            WebkitClipPath: 'circle(100% at 50% 50%)',
+                                    display: "block",
+                                            },
+                                                }
+                                                  },
+                                                  methods: {
+                                                      small: function(event){
+                                                            const smaller =()=> {
+                                                                    this.clip={clipPath: 'circle(0% at 61% 64%)',WebkitClipPath: 'circle(0% at 61% 64%)',display: "block"};
+                                                                          }
+                                                                                console.log("before now is: "+ this.now);
+                                                                                      smaller();
+                                                                                            this.$emit('change-now-at',3);
+                                                                                                  const emerge =()=>{
+                                                                                                          this.clip={clipPath: 'circle(0% at 61% 64%)',WebkitClipPath: 'circle(0% at 61% 64%)',display: "none"};
+                                                                                                                }
+                                                                                                                      setTimeout(emerge,1000);
+                                                                                                                          }
+                                                                                                                            }}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   #background_01{
-    position: relative;
+    position: absolute;
     margin-top: 0 ;
     margin-left: 13rem;
     height: 46.8rem;
